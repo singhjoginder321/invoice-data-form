@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import emptyImage from "../images/empty-image.jpg";
 import "../style/DataTable.css";
 
 function DataTable() {
@@ -49,10 +50,7 @@ function DataTable() {
       </table>
       {data.length === 0 && (
         <div className="empty-image">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="No data placeholder"
-          />
+          <img src={emptyImage} alt="No data found" />
         </div>
       )}
     </div>
