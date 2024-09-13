@@ -43,3 +43,9 @@ tr:nth-child(even) {
 tr:hover {
   background-color: #ddd;
 }
+
+.form-row-buttons-dt {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -11px;
+}

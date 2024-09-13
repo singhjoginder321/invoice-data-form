@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
-import * as XLSX from "xlsx";
 import "./../style/FormPage.css";
 
 function FormPage() {
@@ -12,8 +11,6 @@ function FormPage() {
     subTotal: "",
     invoiceAmount: "",
   });
-
-  const [fileName, setFileName] = useState("invoice_data.xlsx"); // State for file name
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,29 +30,6 @@ function FormPage() {
     } catch (error) {
       console.error("Error storing form data:", error);
     }
-  };
-
-  // Function to export data to Excel
-  const exportToExcel = () => {
-    // Get all the form data from localStorage
-    const dataToExport = JSON.parse(localStorage.getItem("formData")) || [];
-
-    if (dataToExport.length === 0) {
-      toast.error("No data available to export!");
-      return;
-    }
-
-    // Create a worksheet with the data
-    const worksheet = XLSX.utils.json_to_sheet(dataToExport);
-
-    // Create a new workbook and append the worksheet
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Invoice Data");
-
-    // Trigger file download with the specified file name
-    XLSX.writeFile(workbook, fileName);
-
-    toast.success("Excel file downloaded successfully!");
   };
 
   const handleSubmit = (e) => {
@@ -134,24 +108,8 @@ function FormPage() {
           </label>
         </div>
 
-        {/* Input for file name */}
-        <div className="form-row">
-          <label>
-            Excel File Name
-            <input
-              type="text"
-              value={fileName}
-              onChange={(e) => setFileName(e.target.value)}
-              placeholder="Enter file name (e.g., invoice_data.xlsx)"
-            />
-          </label>
-        </div>
-
-        {/* Buttons row */}
+        {/* Submit button */}
         <div className="form-row-buttons">
-          <button type="button" onClick={exportToExcel}>
-            Download Excel File
-          </button>
           <button type="submit">Submit</button>
         </div>
       </form>
