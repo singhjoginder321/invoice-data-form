@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import FormPage from "./components/FormPage";
+import DataTable from "./components/DataTable";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        {/* Navbar to navigate between pages */}
+        <Navbar />
+        <Routes>
+          {/* Home page where data will be rendered */}
+          <Route path="/" element={<DataTable />} />
+          {/* Form page where user submits the invoice */}
+          <Route path="/form" element={<FormPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

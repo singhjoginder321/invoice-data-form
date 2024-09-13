@@ -1,0 +1,34 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #08083c; /* Dark blue background */
+  border-radius: 6px;
+  color: white;
+}
+
+.navbar-logo img {
+  width: auto;
+  height: 40px;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link-button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  background-color: #2115c5;
+  /* Primary blue color from the logo */
+}
+
+.nav-link-button:hover {
+  background-color: #9051f9; /* Purple color from the logo */
+  transition: background-color 0.3s;
+}
