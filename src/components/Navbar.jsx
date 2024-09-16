@@ -1,25 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo-kanerika.png";
-import "./../style/Navbar.css";
+import "./../style/Header.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <Link to="/" className="nav-link">
-          <img src={logo} alt="Home Icon" />
-        </Link>
-      </div>
-      <div className="navbar-buttons">
+      <div className="navbar-buttons-left">
         <Link to="/" className="nav-link-button">
-          Home
-        </Link>
-        <Link to="/form" className="nav-link-button">
-          Open Form
+          Invoice Sum
         </Link>
         <Link to="/edit-table" className="nav-link-button">
-          Edit Table
+          Line Items
+        </Link>
+      </div>
+      <div className="navbar-buttons-right">
+        <Link to="/form" className="nav-link-button2">
+          Add-form
         </Link>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import "react-toastify/dist/ReactToastify.css"; // Import toast styles
 import "./../style/FormPage.css";
 
@@ -11,6 +12,8 @@ function FormPage() {
     subTotal: "",
     invoiceAmount: "",
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -47,7 +50,13 @@ function FormPage() {
       invoiceAmount: "",
     });
 
+    // Show success toast
     toast.success("Form data has been saved!");
+
+    // Redirect to home page after a short delay to ensure the toast message is visible
+    setTimeout(() => {
+      navigate("/"); // Redirect to home page
+    }, 1500); // Adjust the delay as needed
   };
 
   return (
@@ -110,7 +119,9 @@ function FormPage() {
 
         {/* Submit button */}
         <div className="form-row-buttons">
-          <button type="submit">Submit</button>
+          <button className="submit-button" type="submit">
+            Submit
+          </button>
         </div>
       </form>
       {/* Toast container */}

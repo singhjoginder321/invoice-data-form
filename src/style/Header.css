@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 3px;
+  background-color: #ffffff; /* Background color */
+  /* border-radius: 6px; */
+  color: white;
+  border-bottom: 1px solid #d3d3d3; /* 1px grey line at the bottom */
+}
+
+.header-logo img {
+  width: auto;
+  height: 40px;
+  margin-left: 10px;
+}

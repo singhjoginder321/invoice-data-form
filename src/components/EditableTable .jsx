@@ -125,13 +125,25 @@ const EditableTable = () => {
                 </td>
                 <td className="action-column">
                   {editIdx === index ? (
-                    <button onClick={saveRow}>Save</button>
+                    <button className="save-button" onClick={saveRow}>
+                      Save
+                    </button>
                   ) : (
-                    <button onClick={() => editRow(index)}>Edit</button>
+                    <button
+                      className="edit-button"
+                      onClick={() => editRow(index)}
+                    >
+                      Edit
+                    </button>
                   )}
                 </td>
                 <td className="delete-column">
-                  <button onClick={() => deleteRow(index)}>Delete</button>
+                  <button
+                    className="delete-button"
+                    onClick={() => deleteRow(index)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
