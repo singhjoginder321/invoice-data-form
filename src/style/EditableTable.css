@@ -1,0 +1,30 @@
+.editable-table {
+  width: 100%;
+  table-layout: fixed; /* Fixed table layout */
+  margin-top: 18px;
+}
+
+.editable-table th,
+.editable-table td {
+  padding: 10px; /* Padding for better spacing */
+}
+
+.description-column {
+  width: 70%;
+}
+
+.line-amount-column {
+  width: 10%;
+}
+
+.action-column,
+.delete-column {
+  width: 10%;
+}
+
+.cell-content {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

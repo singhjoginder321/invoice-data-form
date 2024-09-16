@@ -18,6 +18,9 @@ function Navbar() {
         <Link to="/form" className="nav-link-button">
           Open Form
         </Link>
+        <Link to="/edit-table" className="nav-link-button">
+          Edit Table
+        </Link>
       </div>
     </nav>
   );
