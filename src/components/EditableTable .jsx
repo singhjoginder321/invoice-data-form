@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
+import emptyImage from "../images/empty-image.jpg";
 import "../style/EditableTable.css"; // Importing custom CSS
 
 const EditableTable = () => {
-  // Load initial data from localStorage or default to the sample data
+  // Load initial data from localStorage or default to an empty array
   const initialData = JSON.parse(localStorage.getItem("tableData")) || [];
 
   const [tableData, setTableData] = useState(initialData);
@@ -74,9 +75,8 @@ const EditableTable = () => {
   }, [tableData, editIdx]);
 
   return (
-    <div>
+    <div className="editable-table-container">
       <ToastContainer /> {/* Toast notification container */}
-      {/* Conditionally render the table or a message */}
       {tableData.length > 0 ? (
         <table
           className="editable-table"
@@ -89,8 +89,7 @@ const EditableTable = () => {
               <th className="description-column">Description</th>
               <th className="line-amount-column">Line Amount</th>
               <th className="action-column">Action</th>
-              <th className="delete-column">Delete</th>{" "}
-              {/* New Delete Column */}
+              <th className="delete-column">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -139,9 +138,18 @@ const EditableTable = () => {
           </tbody>
         </table>
       ) : (
-        <p>No data available. Click "+ Add Row" to start adding data.</p>
+        <div className="no-data-container">
+          <p className="no-data-message">
+            We didn't find any data to show at this time.
+          </p>
+          <div className="empty-image">
+            <img src={emptyImage} alt="No data found" />
+          </div>
+        </div>
       )}
-      <button onClick={addRow}>+ Add Row</button>
+      <button type="button" className="add-row-button" onClick={addRow}>
+        + Add Row
+      </button>
     </div>
   );
 };
