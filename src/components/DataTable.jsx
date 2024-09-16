@@ -40,6 +40,15 @@ function DataTable() {
     toast.success("Excel file downloaded successfully!");
   };
 
+  // Function to delete a row
+  const deleteRow = (index) => {
+    const newData = data.filter((_, i) => i !== index);
+    setData(newData);
+    // Optionally update localStorage
+    localStorage.setItem("formData", JSON.stringify(newData));
+    toast.success("Row deleted successfully!");
+  };
+
   return (
     <div className="table-container">
       <table>
@@ -50,12 +59,13 @@ function DataTable() {
             <th>Invoice Date</th>
             <th>Sub Total</th>
             <th>Vendor Name</th>
+            <th>Actions</th> {/* Add an Actions column */}
           </tr>
         </thead>
         <tbody>
           {data.length === 0 ? (
             <tr>
-              <td colSpan="5" className="no-data">
+              <td colSpan="6" className="no-data">
                 We didn't find any data to show at this time
               </td>
             </tr>
@@ -67,6 +77,11 @@ function DataTable() {
                 <td>{entry.invoiceDate}</td>
                 <td>{entry.subTotal}</td>
                 <td>{entry.vendorName}</td>
+                <td>
+                  <button type="button" onClick={() => deleteRow(index)}>
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))
           )}
