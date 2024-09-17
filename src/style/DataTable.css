@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 65vh;
+  overflow: auto;
+  margin: 20px 10px;
 }
 
 table {
@@ -49,4 +52,9 @@ tr:hover {
   display: flex;
   justify-content: flex-end;
   margin-top: -11px;
+}
+
+.empty-image img {
+  width: 100%;
+  height: auto;
 }
