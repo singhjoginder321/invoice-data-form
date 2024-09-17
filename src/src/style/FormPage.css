@@ -2,15 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 152px);
-  background-color: #fbfbfb;
+  height: 100vh;
+  background-color: #f5f5f5;
   padding: 20px; /* Padding for smaller screens */
 }
 
 .invoice-form {
   background-color: white;
   border: 1px solid #ccc;
-  padding: 24px 32px;
+  padding: 20px;
   border-radius: 8px;
   width: 100%; /* Make form responsive */
   max-width: 600px; /* Set a maximum width for larger screens */
@@ -19,21 +19,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: -130px;
 }
 
 .form-row {
-  /* margin-left: 0px; */
+  margin-left: 0px;
   display: flex;
   flex-direction: column; /* Arrange items in a column */
-  /* margin-bottom: 15px;  */
-  /* Adjust spacing between rows */
+  margin-bottom: 15px; /* Adjust spacing between rows */
 }
 
 .form-row label {
   font-size: 14px;
-  color: #70798c;
-  /* margin-bottom: 5px; */
-   /* Space between label and input */
+  color: #333;
+  margin-bottom: 5px; /* Space between label and input */
   padding: 6px 0px;
 }
 
@@ -41,13 +40,11 @@
 .form-row input[type="date"],
 .form-row input[type="number"] {
   width: 100%;
-  padding: 4px;
-  border: 1px solid #c4cad4;
+  padding: 6px;
+  border: 1px solid #f36f21;
   border-radius: 4px;
   font-size: 11px;
   color: #333;
-  height: 32px;
-
 }
 
 .submit-button {

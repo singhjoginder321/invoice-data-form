@@ -9,10 +9,10 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
-      <div className="main">
+      <div>
         {/* Navbar to navigate between pages */}
         <Header />
-        <div className="mainsection">
+        <div className="main-section">
           <Navbar />
           <Routes>
             {/* Home page where data will be rendered */}

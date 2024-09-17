@@ -64,7 +64,7 @@ function FormPage() {
       <form onSubmit={handleSubmit} className="invoice-form">
         <div className="form-row">
           <label>
-            Invoice Number <span style={{color:'red',marginLeft:'4px'}}>*</span>
+            * Invoice Number
             <input
               type="text"
               name="invoiceNumber"
@@ -72,7 +72,6 @@ function FormPage() {
               onChange={handleChange}
               required
             />
-            
           </label>
 
           <label>

@@ -61,7 +61,7 @@ input[type="number"] {
 .edit-button,
 .delete-button {
   padding: 7px 12px;
-  background-color: white;
+  background-color: #f5f5f5;
   color: #f36f21;
   border: 1px solid #f36f21;
   border-radius: 4px;
